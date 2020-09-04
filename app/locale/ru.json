@@ -68,6 +68,6 @@
     "Disconnect": "Отключение",
     "Connect": "Подключение",
     "Password:": "Пароль:",
-    "Send Password": "Пароль: ",
+    "Send Credentials": "Пароль: ",
     "Cancel": "Выход"
 }

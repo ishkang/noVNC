@@ -282,8 +282,8 @@ msgid "Password:"
 msgstr "비밀번호:"
 
 #: ../vnc.html:305
-msgid "Send Password"
-msgstr "비밀번호 전송"
+msgid "Send Credentials"
+msgstr "확인"
 
 #: ../vnc.html:315
 msgid "Cancel"

@@ -319,5 +319,5 @@ msgstr "Δεν υποστηρίζεται το στοιχείο Canvas"
 #~ msgid "Token:"
 #~ msgstr "Διακριτικό:"
 
-#~ msgid "Send Password"
+#~ msgid "Send Credentials"
 #~ msgstr "Αποστολή Κωδικού Πρόσβασης"

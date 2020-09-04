@@ -298,7 +298,7 @@ msgid "Password:"
 msgstr "Пароль:"
 
 #: ../vnc.html:305
-msgid "Send Password"
+msgid "Send Credentials"
 msgstr "Пароль: "
 
 #: ../vnc.html:315

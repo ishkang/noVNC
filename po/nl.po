@@ -295,7 +295,7 @@ msgid "Password:"
 msgstr "Wachtwoord:"
 
 #: ../vnc.html:300
-msgid "Send Password"
+msgid "Send Credentials"
 msgstr "Verzend Wachtwoord:"
 
 #: ../vnc.html:310

@@ -295,7 +295,7 @@ msgid "Password:"
 msgstr "パスワード:"
 
 #: ../vnc.html:305
-msgid "Send Password"
+msgid "Send Credentials"
 msgstr "パスワードを送信"
 
 #: ../vnc.html:315

@@ -65,6 +65,6 @@
     "Disconnect": "연결 해제",
     "Connect": "연결",
     "Password:": "비밀번호:",
-    "Send Password": "비밀번호 전송",
+    "Send Credentials": "확인",
     "Cancel": "취소"
 }

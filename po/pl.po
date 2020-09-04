@@ -321,5 +321,5 @@ msgstr "Element Canvas nie jest wspierany."
 #~ msgid "Token:"
 #~ msgstr "Token:"
 
-#~ msgid "Send Password"
+#~ msgid "Send Credentials"
 #~ msgstr "Wyślij Hasło"
