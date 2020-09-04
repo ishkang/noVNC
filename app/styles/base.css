@@ -28,7 +28,7 @@ body {
   background-repeat:no-repeat;
   background-position:right bottom;
   height:100%;
-  touch-action: none;
+  touch-action: auto;
 }
 
 html {
@@ -937,6 +937,8 @@ select:active {
   font-family: 'Orbitron', 'OrbitronTTF', sans-serif;
   line-height:90%;
   text-shadow: 0.1em 0.1em 0 black;
+  display: none;
+  visibility: hidden;
 }
 .noVNC_logo span{
   color:green;
