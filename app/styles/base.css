@@ -28,7 +28,7 @@ body {
   background-repeat:no-repeat;
   background-position:right bottom;
   height:100%;
-  touch-action: auto;
+  touch-action: none;
 }
 
 html {
