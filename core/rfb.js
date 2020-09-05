@@ -289,7 +289,7 @@ export default class RFB extends EventTargetMixin {
 
         // ===== PROPERTIES =====
 
-        this.dragViewport = false;
+        this.dragViewport = true;
         this.focusOnClick = true;
 
         this._viewOnly = false;

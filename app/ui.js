@@ -17,7 +17,7 @@ import Keyboard from "../core/input/keyboard.js";
 import RFB from "../core/rfb.js";
 import * as WebUtil from "./webutil.js";
 
-const PAGE_TITLE = "noVNC";
+const PAGE_TITLE = "RS10";
 
 const UI = {
 
@@ -1286,7 +1286,7 @@ const UI = {
         } else {
             UI.enableSetting('view_clip');
             UI.rfb.clipViewport = UI.getSetting('view_clip');
-        }
+       }
 
         // Changing the viewport may change the state of
         // the dragging button
