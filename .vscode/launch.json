@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:5500/vnc.html?autoconnect=1&host=192.168.123.108&port=8000&encrypt=0&password=rs&resize=off&show_dot=1&view_clip=1",
+            "url": "http://localhost:5500/?autoconnect=1&host=192.168.123.108&port=8000&encrypt=0&password=rs&resize=off&show_dot=1&view_clip=1",
             "webRoot": "${workspaceFolder}"
         }
     ]
