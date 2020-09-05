@@ -79,11 +79,11 @@ msgstr "컨트롤 바 숨기기/보이기"
 
 #: ../vnc.html:108
 msgid "Move/Drag Viewport"
-msgstr "움직이기/드래그 뷰포트"
+msgstr "창 끌기"
 
 #: ../vnc.html:108
 msgid "viewport drag"
-msgstr "뷰포트 드래그"
+msgstr "창 끌기"
 
 #: ../vnc.html:114 ../vnc.html:117 ../vnc.html:120 ../vnc.html:123
 msgid "Active Mouse Button"
@@ -111,15 +111,15 @@ msgstr "키보드"
 
 #: ../vnc.html:126
 msgid "Show Keyboard"
-msgstr "키보드 보이기"
+msgstr "키보드"
 
 #: ../vnc.html:133
 msgid "Extra keys"
-msgstr "기타 키들"
+msgstr "특수키"
 
 #: ../vnc.html:133
 msgid "Show Extra Keys"
-msgstr "기타 키들 보이기"
+msgstr "특수키"
 
 #: ../vnc.html:138
 msgid "Ctrl"
@@ -127,7 +127,7 @@ msgstr "Ctrl"
 
 #: ../vnc.html:138
 msgid "Toggle Ctrl"
-msgstr "Ctrl 켜기/끄기"
+msgstr "Ctrl"
 
 #: ../vnc.html:141
 msgid "Alt"
@@ -135,11 +135,11 @@ msgstr "Alt"
 
 #: ../vnc.html:141
 msgid "Toggle Alt"
-msgstr "Alt 켜기/끄기"
+msgstr "Alt"
 
 #: ../vnc.html:144
 msgid "Send Tab"
-msgstr "Tab 보내기"
+msgstr "Tab"
 
 #: ../vnc.html:144
 msgid "Tab"
@@ -151,7 +151,7 @@ msgstr "Esc"
 
 #: ../vnc.html:147
 msgid "Send Escape"
-msgstr "Esc 보내기"
+msgstr "Esc"
 
 #: ../vnc.html:150
 msgid "Ctrl+Alt+Del"
@@ -159,7 +159,7 @@ msgstr "Ctrl+Alt+Del"
 
 #: ../vnc.html:150
 msgid "Send Ctrl-Alt-Del"
-msgstr "Ctrl+Alt+Del 보내기"
+msgstr "Ctrl+Alt+Del"
 
 #: ../vnc.html:158
 msgid "Shutdown/Reboot"
@@ -211,11 +211,11 @@ msgstr "보기 전용"
 
 #: ../vnc.html:211
 msgid "Clip to Window"
-msgstr "창에 클립"
+msgstr "스크롤바 숨기기"
 
 #: ../vnc.html:214
 msgid "Scaling Mode:"
-msgstr "스케일링 모드:"
+msgstr "확대/축소:"
 
 #: ../vnc.html:216
 msgid "None"
@@ -223,7 +223,7 @@ msgstr "없음"
 
 #: ../vnc.html:217
 msgid "Local Scaling"
-msgstr "로컬 스케일링"
+msgstr "꽉찬화면"
 
 #: ../vnc.html:218
 msgid "Remote Resizing"

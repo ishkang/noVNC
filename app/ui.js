@@ -84,7 +84,7 @@ const UI = {
             UI.toggleControlbarSide();
         }
 
-        UI.initFullscreen();
+        UI.initLocalScaling();
 
         // Setup event handlers
         UI.addControlbarHandlers();
@@ -119,18 +119,8 @@ const UI = {
         return Promise.resolve(UI.rfb);
     },
 
-    initFullscreen() {
-        // Only show the button if fullscreen is properly supported
-        // * Safari doesn't support alphanumerical input while in fullscreen
-        if (!isSafari() &&
-            (document.documentElement.requestFullscreen ||
-             document.documentElement.mozRequestFullScreen ||
-             document.documentElement.webkitRequestFullscreen ||
-             document.body.msRequestFullscreen)) {
-            document.getElementById('noVNC_fullscreen_button')
-                .classList.remove("noVNC_hidden");
-            UI.addFullscreenHandlers();
-        }
+    initLocalScaling() {
+        UI.addLocalScalingHandlers();
     },
 
     initSettings() {
@@ -362,14 +352,9 @@ const UI = {
         UI.addSettingChangeHandler('reconnect_delay');
     },
 
-    addFullscreenHandlers() {
-        document.getElementById("noVNC_fullscreen_button")
-            .addEventListener('click', UI.toggleFullscreen);
-
-        window.addEventListener('fullscreenchange', UI.updateFullscreenButton);
-        window.addEventListener('mozfullscreenchange', UI.updateFullscreenButton);
-        window.addEventListener('webkitfullscreenchange', UI.updateFullscreenButton);
-        window.addEventListener('msfullscreenchange', UI.updateFullscreenButton);
+    addLocalScalingHandlers() {
+        document.getElementById("noVNC_localscaling_button")
+            .addEventListener('click', UI.toggleLocalScaling);
     },
 
 /* ------^-------
@@ -1202,52 +1187,35 @@ const UI = {
 /* ------^-------
  *  /PASSWORD
  * ==============
- *   FULLSCREEN
+ *   LOCALSCALING
  * ------v------*/
 
-    toggleFullscreen() {
-        if (document.fullscreenElement || // alternative standard method
-            document.mozFullScreenElement || // currently working methods
-            document.webkitFullscreenElement ||
-            document.msFullscreenElement) {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-        } else {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            } else if (document.documentElement.mozRequestFullScreen) {
-                document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) {
-                document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-            } else if (document.body.msRequestFullscreen) {
-                document.body.msRequestFullscreen();
-            }
-        }
-        UI.updateFullscreenButton();
+    toggleLocalScaling() {
+        if (!UI.rfb) return;
+
+        UI.rfb.scaleViewport = !UI.rfb.scaleViewport;
+        UI.updateLocalScalingButton();
+        
+        WebUtil.setSetting('resize', UI.rfb.scaleViewport ? 'scale' : 'off');
+        UI.updateSetting('resize');
+
+        UI.updateViewClip();
     },
 
-    updateFullscreenButton() {
-        if (document.fullscreenElement || // alternative standard method
-            document.mozFullScreenElement || // currently working methods
-            document.webkitFullscreenElement ||
-            document.msFullscreenElement ) {
-            document.getElementById('noVNC_fullscreen_button')
+    updateLocalScalingButton() {
+        if (!UI.rfb) return;
+        
+        if (UI.rfb.scaleViewport) {
+            document.getElementById('noVNC_localscaling_button')
                 .classList.add("noVNC_selected");
         } else {
-            document.getElementById('noVNC_fullscreen_button')
+            document.getElementById('noVNC_localscaling_button')
                 .classList.remove("noVNC_selected");
         }
     },
 
 /* ------^-------
- *  /FULLSCREEN
+ *  /LOCALSCALING
  * ==============
  *     RESIZE
  * ------v------*/
@@ -1258,6 +1226,7 @@ const UI = {
 
         UI.rfb.scaleViewport = UI.getSetting('resize') === 'scale';
         UI.rfb.resizeSession = UI.getSetting('resize') === 'remote';
+        UI.updateLocalScalingButton();
     },
 
 /* ------^-------
@@ -1285,7 +1254,12 @@ const UI = {
             UI.rfb.clipViewport = true;
         } else {
             UI.enableSetting('view_clip');
-            UI.rfb.clipViewport = UI.getSetting('view_clip');
+            const view_clip = WebUtil.getConfigVar('view_clip', false);
+            WebUtil.setSetting('view_clip', view_clip);
+            UI.updateSetting('view_clip');
+            UI.rfb.clipViewport = view_clip;
+
+            UI.rfb.dragViewport = view_clip;
        }
 
         // Changing the viewport may change the state of

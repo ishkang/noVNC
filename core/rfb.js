@@ -648,7 +648,7 @@ export default class RFB extends EventTargetMixin {
     _updateScale() {
         if (!this._scaleViewport) {
             this._display.scale = 1.0;
-        } else {
+       } else {
             const size = this._screenSize();
             this._display.autoscale(size.w, size.h);
         }
