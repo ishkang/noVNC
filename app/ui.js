@@ -1298,6 +1298,8 @@ const UI = {
         if (UI.rfb.clipViewport) {
             viewDragButton.disabled = false;
             viewDragButton.classList.remove("noVNC_disabled");
+
+            UI.rfb._display.viewportChangePos(UI.rfb._viewportDragPos.x, UI.rfb._viewportDragPos.y);
         } else {
             viewDragButton.disabled = true;
             viewDragButton.classList.add("noVNC_disabled");

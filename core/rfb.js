@@ -149,11 +149,11 @@ export default class RFB extends EventTargetMixin {
         };
 
         // Mouse state
-        this._mousePos = {};
+        this._mousePos = {'x': 0, 'y': 0};
         this._mouseButtonMask = 0;
         this._mouseLastMoveTime = 0;
         this._viewportDragging = false;
-        this._viewportDragPos = {};
+        this._viewportDragPos = {'x': 0, 'y': 0};
         this._viewportHasMoved = false;
         this._accumulatedWheelDeltaX = 0;
         this._accumulatedWheelDeltaY = 0;
@@ -965,7 +965,7 @@ export default class RFB extends EventTargetMixin {
             return;
         }
 
-        this._mousePos = { 'x': x, 'y': y };
+        this._mousePos = {'x': x, 'y': y};
 
         // Limit many mouse move events to one every MOUSE_MOVE_DELAY ms
         if (this._mouseMoveTimer == null) {
