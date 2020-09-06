@@ -1246,7 +1246,7 @@ const UI = {
         if (scaling) {
             // Can't be clipping if viewport is scaled to fit
             UI.forceSetting('view_clip', false);
-            UI.rfb.clipViewport  = false;
+            UI.rfb.clipViewport = false;
         } else if (!hasScrollbarGutter) {
             // Some platforms have scrollbars that are difficult
             // to use in our case, so we always use our own panning
@@ -1258,12 +1258,9 @@ const UI = {
             WebUtil.setSetting('view_clip', view_clip);
             UI.updateSetting('view_clip');
             UI.rfb.clipViewport = view_clip;
+        }
 
-            UI.rfb.dragViewport = view_clip;
-       }
-
-        // Changing the viewport may change the state of
-        // the dragging button
+        UI.rfb.dragViewport = UI.rfb.clipViewport;
         UI.updateViewDrag();
     },
 
