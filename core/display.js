@@ -146,6 +146,17 @@ export default class Display {
         this.flip();
     }
 
+    viewportJumpPos(x, y) {
+        const vp = this._viewportLoc;
+        
+        vp.x = x;
+        vp.y = y;
+
+        this._damage(vp.x, vp.y, vp.w, vp.h);
+
+        this.flip();
+    }
+
     viewportChangeSize(width, height) {
 
         if (!this._clipViewport ||

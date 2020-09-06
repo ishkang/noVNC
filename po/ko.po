@@ -39,11 +39,11 @@ msgstr "호스트는 설정되어야 합니다."
 
 #: ../app/ui.js:1083
 msgid "Connected (encrypted) to "
-msgstr "다음과 (암호화되어) 연결되었습니다:"
+msgstr "연결되었습니다:"
 
 #: ../app/ui.js:1085
 msgid "Connected (unencrypted) to "
-msgstr "다음과 (암호화 없이) 연결되었습니다:"
+msgstr "연결되었습니다:"
 
 #: ../app/ui.js:1108
 msgid "Something went wrong, connection is closed"

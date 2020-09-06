@@ -41,6 +41,8 @@ const UI = {
     reconnectCallback: null,
     reconnectPassword: null,
 
+    lastViewportLoc: {'x': 0, 'y': 0, 'w': 0, 'h': 0},
+
     prime() {
         return WebUtil.initSettings().then(() => {
             if (document.readyState === "interactive" || document.readyState === "complete") {
@@ -1193,6 +1195,13 @@ const UI = {
     toggleLocalScaling() {
         if (!UI.rfb) return;
 
+        /*
+        if(!UI.rfb.scaleViewport) {
+            // 보관
+            UI.lastViewportLoc = UI.rfb._display._viewportLoc;
+        }
+        */
+
         UI.rfb.scaleViewport = !UI.rfb.scaleViewport;
         UI.updateLocalScalingButton();
         
@@ -1262,6 +1271,13 @@ const UI = {
 
         UI.rfb.dragViewport = UI.rfb.clipViewport;
         UI.updateViewDrag();
+
+        /*
+        if(!scaling) {
+            // 이전 상태 복귀
+            UI.rfb._display.viewportJumpPos(UI.lastViewportLoc.x, UI.lastViewportLoc.y);
+        }
+        */
     },
 
 /* ------^-------
@@ -1298,8 +1314,6 @@ const UI = {
         if (UI.rfb.clipViewport) {
             viewDragButton.disabled = false;
             viewDragButton.classList.remove("noVNC_disabled");
-
-            UI.rfb._display.viewportChangePos(UI.rfb._viewportDragPos.x, UI.rfb._viewportDragPos.y);
         } else {
             viewDragButton.disabled = true;
             viewDragButton.classList.add("noVNC_disabled");
