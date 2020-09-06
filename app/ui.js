@@ -1297,10 +1297,13 @@ const UI = {
             viewDragButton.classList.remove("noVNC_selected");
         }
 
+        // 버튼 숨기지 않음 (비활성 처리만)
         if (UI.rfb.clipViewport) {
-            viewDragButton.classList.remove("noVNC_hidden");
+            viewDragButton.disabled = false;
+            viewDragButton.classList.remove("noVNC_disabled");
         } else {
-            viewDragButton.classList.add("noVNC_hidden");
+            viewDragButton.disabled = true;
+            viewDragButton.classList.add("noVNC_disabled");
         }
     },
 

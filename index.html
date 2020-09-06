@@ -89,8 +89,13 @@
 
             <!-- Drag/Pan the viewport -->
             <input type="image" alt="Drag" src="app/images/drag.svg"
-                id="noVNC_view_drag_button" class="noVNC_button noVNC_hidden"
+                id="noVNC_view_drag_button" class="noVNC_button"
                 title="Move/Drag Viewport">
+
+            <!-- Toggle local scaling -->
+            <input type="image" alt="Local Scaling" src="app/images/localscaling.svg"
+                id="noVNC_localscaling_button" class="noVNC_button"
+                title="Local Scaling">
 
             <!--noVNC Touch Device only buttons-->
             <div id="noVNC_mobile_buttons">
@@ -155,11 +160,6 @@
                     value="Clear" class="noVNC_submit">
             </div>
             </div>
-
-            <!-- Toggle local scaling -->
-            <input type="image" alt="Local Scaling" src="app/images/localscaling.svg"
-                id="noVNC_localscaling_button" class="noVNC_button"
-                title="Local Scaling">
 
             <!-- Settings -->
             <input type="image" alt="Settings" src="app/images/settings.svg"
